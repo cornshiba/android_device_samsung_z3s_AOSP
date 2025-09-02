@@ -30,6 +30,10 @@ PRODUCT_PACKAGES += \
 TARGET_SCREEN_HEIGHT := 3200
 TARGET_SCREEN_WIDTH := 1440
 
+# Density mapping config
+PRODUCT_COPY_FILES += \
+    $(DEVICE_PATH)/configs/display/display_id_4633128672291735937.xml:$(TARGET_COPY_OUT_VENDOR)/etc/displayconfig/display_id_4633128672291735937.xml
+
 # Fingerprint
 PRODUCT_PACKAGES += \
     android.hardware.biometrics.fingerprint-service.samsung \
@@ -37,15 +41,6 @@ PRODUCT_PACKAGES += \
 
 # Overlays 
 DEVICE_PACKAGE_OVERLAYS += $(DEVICE_PATH)/overlay
-
-# Permissions
-PRODUCT_COPY_FILES += \
-    frameworks/native/data/etc/android.hardware.telephony.euicc.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/permissions/android.hardware.telephony.euicc.xml \
-    $(DEVICE_PATH)/configs/permissions/privapp-permissions-com.samsung.euicc.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/permissions/privapp-permissions-com.samsung.euicc.xml
-
-# RIL
-PRODUCT_PACKAGES += \
-    SamsungEuicc
 
 # Sensors
 PRODUCT_COPY_FILES += \
